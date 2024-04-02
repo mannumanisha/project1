@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kubowania/battleships.git"
+    "url": "git+https://github.com/mannumanisha/project1.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kubowania/battleships/issues"
+    "url": "https://github.com/mannumanisha/project1/battleships/issues"
   },
-  "homepage": "https://github.com/kubowania/battleships#readme",
+  "homepage": "https://github.com/mannumanisha/project1/battleships#readme",
   "dependencies": {
     "express": "^4.17.1",
     "socket.io": "^2.3.0"
