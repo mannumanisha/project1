@@ -44,7 +44,8 @@ pipeline {
 
     post {
         always {
-            // Clean up resources or perform any other actions
+            // Placeholder echo statement
+            echo 'Performing cleanup actions...'
         }
         success {
             echo 'Pipeline succeeded!'
@@ -54,3 +55,4 @@ pipeline {
         }
     }
 }
+
