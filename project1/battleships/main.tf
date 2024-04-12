@@ -30,7 +30,7 @@ resource "aws_volume_attachment" "example_attachment" {
     connection {
       type        = "ssh"
       user        = "ubuntu"
-      private_key = file("/path/to/your/key.pem")  # Replace with the path to your private key file
+      private_key = file("C:\Users\Manisha\Downloads\project.pem")  # Replace with the path to your private key file
       host        = self.public_ip
     }
   }
