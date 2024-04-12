@@ -30,7 +30,8 @@ resource "null_resource" "install_tools" {
     inline = [
       "sudo apt-get update",
       "sudo apt-get install -y git unzip",
-      "sudo unzip terraform_1.0.0_linux_amd64.zip -d /usr/local/bin/"  # Adjusted unzip command for Ubuntu
+"unzip -o terraform_1.0.0_linux_amd64.zip",
+      "sudo mv terraform /usr/local/bin/"
     ]
 
     connection {
