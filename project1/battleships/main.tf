@@ -25,6 +25,7 @@ resource "aws_volume_attachment" "example_attachment" {
     inline = [
       "sudo apt-get update",
       "sudo apt-get install -y git"
+"git=2.33.1-0ubuntu0.20.04.2"
     ]
 
     connection {
