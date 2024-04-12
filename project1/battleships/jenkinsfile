@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git credentialsId: 'github-creds', url: 'https://github.com/mannumanisha/project1.git'
+                git credentialsId: 'github-creds', url: 'https://github.com/mannumanisha/project1.git', branch: 'main'
             }
         }
 
@@ -23,7 +23,9 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                sh 'terraform init'
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-creds']]) {
+                    sh 'terraform init'
+                }
             }
         }
 
@@ -39,4 +41,17 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            // Clean up resources or perform any other actions
+        }
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
 }
+
