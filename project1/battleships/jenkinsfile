@@ -17,6 +17,7 @@ pipeline {
             steps {
                 script {
                     // Download Terraform binary
+                    echo 'Downloading Terraform binary...
                     sh 'wget https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip'
 
                     // Unzip Terraform binary
@@ -26,7 +27,7 @@ pipeline {
                     sh 'sudo mv terraform /usr/local/bin/'
 
                     // Verify Terraform installation
-                   sh 'terraform version
+                   sh 'terraform version'
             }
         }
 
