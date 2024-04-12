@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    environment {
+        AWS_ACCESS_KEY_ID = credentials('aws-creds')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-creds')
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git credentialsId: 'github-creds', url: ''
+            }
+        }
+
+        stage('Install Terraform') {
+            steps {
+                sh 'wget https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip'
+                sh 'unzip terraform_1.0.0_linux_amd64.zip'
+                sh 'sudo mv terraform /usr/local/bin/'
+            }
+        }
+
+        stage('Terraform Init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+
+        stage('Terraform Plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                sh 'terraform apply -auto-approve'
+            }
+        }
+    }
+}
