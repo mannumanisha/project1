@@ -24,13 +24,13 @@ resource "aws_volume_attachment" "example_attachment" {
   volume_id   = aws_ebs_volume.example_volume.id
   instance_id = aws_instance.example.id
 }
-
 resource "null_resource" "install_tools" {
   provisioner "remote-exec" {
     inline = [
       "sudo apt-get update",
       "sudo apt-get install -y git unzip",
-"unzip -o terraform_1.0.0_linux_amd64.zip",
+      "echo 'Executing unzip command'",
+      "unzip -o terraform_1.0.0_linux_amd64.zip",
       "sudo mv terraform /usr/local/bin/"
     ]
 
