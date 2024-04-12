@@ -34,7 +34,7 @@ resource "null_resource" "install_git" {
     connection {
       type        = "ssh"
       user        = "ubuntu"
-      private_key = file("C:\Users\Manisha\Downloads\project.pem")
+      private_key = file("C:/Users/Manisha/Downloads/project.pem")
       host        = aws_instance.example.public_ip
     }
   }
