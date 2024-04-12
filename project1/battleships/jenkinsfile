@@ -15,9 +15,18 @@ pipeline {
 
         stage('Install Terraform') {
             steps {
-                sh 'wget https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip'
-                sh 'unzip terraform_1.0.0_linux_amd64.zip'
-                sh 'sudo mv terraform /usr/local/bin/'
+                script {
+                    // Download Terraform binary
+                    sh 'wget https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip'
+
+                    // Unzip Terraform binary
+                    sh 'unzip terraform_1.0.0_linux_amd64.zip'
+
+                    // Move Terraform binary to /usr/local/bin/
+                    sh 'sudo mv terraform /usr/local/bin/'
+
+                    // Verify Terraform installation
+                   sh 'terraform version
             }
         }
 
