@@ -14,13 +14,8 @@ This tutorial will be in pure JavaScript, so no canvas will be used.
 
 We will not be focusing too much on the styling, this video will be all about the logic of the game. Please watch the next two videos in the series to have a completed multiplayer version that is styled.
 
-After watching this video, please head over to:
-Codestackr to make it multiplayer: https://youtu.be/TpAwggQJPUQ
-Web Dev Simplified for the styling: https://youtu.be/G6JTM-zt-dQ
 
-### [Click here for a live Demo of the final game](http://battleship.tech/)
 
-Thanks for watching! If you liked watching this video, please do hit the  Subscribe or Like button so I know to make more!
 
 ### MIT Licence
 
